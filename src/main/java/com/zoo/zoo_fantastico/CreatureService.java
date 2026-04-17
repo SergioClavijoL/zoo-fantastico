@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-
+//tarea completa
 @Service
 public class CreatureService {
     private final CreatureRepository creatureRepository;
