@@ -9,7 +9,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/creatures")
-public class CreatureController {
+public class           CreatureController {
     private final CreatureService creatureService;
     @Autowired
     public CreatureController(CreatureService creatureService) {
