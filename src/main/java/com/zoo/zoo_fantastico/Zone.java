@@ -1,26 +1,25 @@
 package com.zoo.zoo_fantastico;
 
+import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import jakarta.persistence.*;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import java.util.List;
 
 @Entity
 @Data
 @NoArgsConstructor
-public class Creature {
+public class Zone {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String name;
-    private String species;
-    private double size;
-    private int dangerLevel;
-    private String healthStatus;
+    private String description;
+    private int capacity;
 
-    @ManyToOne
-    @JoinColumn(name = "zone_id")
-    @JsonIgnoreProperties("creatures")
-    private Zone zone;
+    @OneToMany(mappedBy = "zone")
+    @JsonIgnoreProperties("zone")
+    private List<Creature> creatures;
 }
